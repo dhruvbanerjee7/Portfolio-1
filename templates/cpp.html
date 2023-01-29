@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Car Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict_cpp" method="POST">
+    	<input type="text" id="symboling" name = "symboling" placeholder="Insurance risk rating (3,-3)" required="required" />
+        <input type="text" id="doornumber" name ="doornumber"  placeholder="Number of doors in a car" required="required" />
+        <input type="text" id="carlength" name="carlength" placeholder="Car Length" required="required" />
+        <br></br>
+		<input type="text" id="carwidth" name="carwidth" placeholder="Car Width" required="required" />
+		<input type="text" id="carheight" name="carheight" placeholder="Car Height" required="required" />
+        <input type="text" id="cylindernumber" name ="cylindernumber"  placeholder="Cylinder Number" required="required" />
+        <br></br>
+		<input type="text" id="enginesize" name="enginesize" placeholder="Engine Size" required="required" />
+		<input type="text" id="stroke" name ="stroke" placeholder="Stroke" required="required" />
+        
+		<input type="text" id="horsepower" name="horsepower" placeholder="Horsepower" required="required" />
+        <br></br>
+        <input type="text" id="peakrpm" name="peakrpm" placeholder="Peak RPM" required="required" />
+        <input type="text" id="highwaympg" name="highwaympg" placeholder="Mileage" required="required" />
+        <br></br>
+        <select id = "aspiration" name = "aspiration" >
+            <option value="" disabled selected hidden>Aspiration</option>
+            <option value=std>std</option>
+            <option value=turbo>turbo</option>   
+        </select>
+
+        <select id = "carbody" name = "carbody">
+            <option value="" disabled selected hidden>Car Body</option>
+            <option value=convertible>convertible</option>
+            <option value=hardtop>hardtop</option>
+            <option value=hatchback>hatchback</option>
+            <option value=sedan>sedan</option>
+            <option value=wagon>wagon</option>
+             
+        </select>
+
+		<select id = "drivewheel" name = "drivewheel">
+            <option value="" disabled selected hidden>Drive wheel</option>
+            <option value=4wd>4wd</option>
+            <option value=fwd>fwd</option>
+            <option value=rwd>rwd</option>
+ 
+        </select>
+
+
+        <br></br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

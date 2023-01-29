@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Bank Marketing Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict_bma" method="POST">
+    	<input type="text" id="age" name = "age" placeholder="Age" required="required" />
+        <select id = "job" name = "job">
+            <option value="" disabled selected hidden>Job</option>
+            <option value=management>management</option>
+            <option value=technician>technician</option>
+            <option value=entrepreneur>entrepreneur</option>
+            <option value=blue-collar>blue-collar</option>
+            <option value=unknown>unknown</option>
+            <option value=retired>retired</option>
+            <option value=admin.>admin.</option>
+            <option value=services>services</option>
+            <option value=self-employed>self-employed</option>
+            <option value=unemployed>unemployed</option>
+            <option value=housemaid>housemaid</option>
+            <option value=student>student</option>
+            
+             
+        </select>
+        <select id = "marital" name = "marital">
+            <option value="" disabled selected hidden>Marital</option>
+            <option value=married>married</option>
+            <option value=single>single</option>
+            <option value=divorced>divorced</option> 
+        </select>
+
+        <select id = "education" name = "education">
+            <option value="" disabled selected hidden>education</option>
+            <option value=tertiary>tertiary</option>
+            <option value=secondary>secondary</option>
+            <option value=unknown>unknown</option>
+            <option value=primary>primary</option>            
+             
+        </select>
+        <br></br>
+        <input type="text" id="balance" name ="balance"  placeholder="Balance in Account" required="required" />
+        <select id = "housing" name = "housing">
+            <option value="" disabled selected hidden>Housing</option>
+            <option value=yes>yes</option>
+            <option value=no>no</option>     
+        </select>
+        <br></br>
+		<input type="text" id="day" name="day" placeholder="Day" required="required" />
+        <select id = "month" name = "month">
+            <option value="" disabled selected hidden>Month</option>
+            <option value=may>may</option>
+            <option value=jun>jun</option>
+            <option value=jul>jul</option>
+            <option value=aug>aug</option>
+            <option value=oct>oct</option>
+            <option value=nov>nov</option>
+            <option value=dec>dec</option>
+            <option value=jan>jan</option>
+            <option value=feb>feb</option>
+            <option value=mar>mar</option>
+            <option value=apr>apr</option>
+            <option value=sep>sep</option>
+        </select>
+		<input type="text" id="duration" name="duration" placeholder="Customer Duration" required="required" />
+        <input type="text" id="campaign" name ="campaign"  placeholder="Days of Campaign" required="required" />
+        <br></br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
